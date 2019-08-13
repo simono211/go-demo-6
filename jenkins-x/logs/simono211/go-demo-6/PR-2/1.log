@@ -1,0 +1,54 @@
+Step: step-credential-initializer-lwcrh:
+
+{"level":"warn","ts":1565728976.2456102,"logger":"fallback-logger","caller":"logging/config.go:69","msg":"Fetch GitHub commit ID from kodata failed: \"ref: refs/heads/master\" is not a valid GitHub commit ID"}
+{"level":"info","ts":1565728976.2460065,"logger":"fallback-logger","caller":"creds-init/main.go:40","msg":"Credentials initialized."}
+Step: step-working-dir-initializer-sdc29:
+
+{"level":"warn","ts":1565728977.0307133,"logger":"fallback-logger","caller":"logging/config.go:69","msg":"Fetch GitHub commit ID from kodata failed: open /var/run/ko/HEAD: no such file or directory"}
+{"level":"info","ts":1565728977.0317473,"logger":"fallback-logger","caller":"bash/main.go:65","msg":"Successfully executed command \"mkdir -p /workspace/source\""}
+Step: step-place-tools:
+
+Step: step-git-source-meta-*********-go-demo-6-pr-2-s-s594d:
+
+{"level":"warn","ts":1565728982.213639,"logger":"fallback-logger","caller":"logging/config.go:69","msg":"Fetch GitHub commit ID from kodata failed: \"ref: refs/heads/master\" is not a valid GitHub commit ID"}
+{"level":"info","ts":1565728983.8977685,"logger":"fallback-logger","caller":"git/git.go:102","msg":"Successfully cloned https://github.com/*********/go-demo-6.git @ 8a9c90101beb0167ccfe2536cddce31e791aa6fd in path /workspace/source"}
+Step: step-git-merge:
+
+{"level":"info","msg":"Using SHAs from PULL_REFS=master:8a9c90101beb0167ccfe2536cddce31e791aa6fd,2:f2ab5449d4d147e5d56fe5997d163d989df9e446","time":"2019-08-13T20:43:04Z"}
+{"level":"debug","msg":"ran git fetch --unshallow origin f2ab5449d4d147e5d56fe5997d163d989df9e446: 8a9c90101beb0167ccfe2536cddce31e791aa6fd: in ","time":"2019-08-13T20:43:06Z"}
+{"level":"debug","msg":"ran git checkout master in ","time":"2019-08-13T20:43:06Z"}
+{"level":"debug","msg":"ran git reset --hard 8a9c90101beb0167ccfe2536cddce31e791aa6fd in ","time":"2019-08-13T20:43:06Z"}
+{"level":"debug","msg":"ran clean --force -d . in ","time":"2019-08-13T20:43:06Z"}
+{"level":"debug","msg":"ran git merge f2ab5449d4d147e5d56fe5997d163d989df9e446 in ","time":"2019-08-13T20:43:06Z"}
+MERGED SHA SUBJECT
+8d98d21d9  Merge commit 'f2ab5449d4d147e5d56fe5997d163d989df9e446'
+f2ab5449d  Trying to extend the pipeline
+8bfec6e79  Trying to extend the pipeline
+Step: step-merge-pull-refs:
+
+{"level":"debug","msg":"ran git fetch origin f2ab5449d4d147e5d56fe5997d163d989df9e446: 8a9c90101beb0167ccfe2536cddce31e791aa6fd: in ","time":"2019-08-13T20:43:07Z"}
+{"level":"debug","msg":"Unshallowed git repo in ","time":"2019-08-13T20:43:07Z"}
+{"level":"debug","msg":"ran git checkout master in ","time":"2019-08-13T20:43:07Z"}
+{"level":"debug","msg":"ran git reset --hard 8a9c90101beb0167ccfe2536cddce31e791aa6fd in ","time":"2019-08-13T20:43:07Z"}
+{"level":"debug","msg":"ran clean --force -d . in ","time":"2019-08-13T20:43:07Z"}
+{"level":"debug","msg":"ran git merge f2ab5449d4d147e5d56fe5997d163d989df9e446 in ","time":"2019-08-13T20:43:07Z"}
+MERGED SHA SUBJECT
+eae22ad4d  Merge commit 'f2ab5449d4d147e5d56fe5997d163d989df9e446'
+f2ab5449d  Trying to extend the pipeline
+8bfec6e79  Trying to extend the pipeline
+Step: step-create-effective-pipeline:
+
+{"level":"info","msg":"Deleting and cloning the Jenkins X versions repo","time":"2019-08-13T20:43:08Z"}
+{"level":"info","msg":"Cloning the Jenkins X versions repo https://github.com/jenkins-x/jenkins-x-versions.git with ref refs/heads/master to /builder/home/.jx/jenkins-x-versions","time":"2019-08-13T20:43:08Z"}
+{"level":"info","msg":"Effective pipeline written to jenkins-x-serverless-jenkins-effective.yml","time":"2019-08-13T20:43:10Z"}
+Step: step-create-tekton-crds:
+
+{"level":"warning","msg":"failed to find secret kaniko-secret in namespace *********: secrets \"kaniko-secret\" not found","time":"2019-08-13T20:43:11Z"}
+{"level":"info","msg":"PipelineActivity for *********-go-demo-6-PR-2-1","time":"2019-08-13T20:43:11Z"}
+{"level":"info","msg":"Applying changes ","time":"2019-08-13T20:43:11Z"}
+{"level":"info","msg":"Checking if batch build reconciling is needed","time":"2019-08-13T20:43:11Z"}
+{"level":"info","msg":"upserted PipelineResource *********-go-demo-6-pr-2-server for the git repository https://github.com/*********/go-demo-6.git and branch PR-2","time":"2019-08-13T20:43:11Z"}
+{"level":"info","msg":"upserted Task *********-go-demo-6-pr-2-server-from-build-pack-1","time":"2019-08-13T20:43:11Z"}
+{"level":"info","msg":"upserted Pipeline *********-go-demo-6-pr-2-server-1","time":"2019-08-13T20:43:11Z"}
+{"level":"info","msg":"created PipelineRun *********-go-demo-6-pr-2-server-1","time":"2019-08-13T20:43:11Z"}
+{"level":"info","msg":"created PipelineStructure *********-go-demo-6-pr-2-server-1","time":"2019-08-13T20:43:11Z"}
