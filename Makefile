@@ -1,3 +1,4 @@
+VERSION := 1.0.0
 SHELL := /bin/bash
 GO := GO15VENDOREXPERIMENT=1 go
 NAME := go-demo-6
@@ -76,4 +77,3 @@ integtest:
 	test -test.v --run ProductionTest \
 	--cover
 
-VERSION := 2.0.0
