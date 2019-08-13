@@ -1,5 +1,3 @@
-{{- if .Values.knativeDeploy }}
-{{- else }}
 apiVersion: extensions/v1beta1
 kind: Deployment
 metadata:
@@ -24,10 +22,8 @@ spec:
         image: "{{ .Values.image.repository }}:{{ .Values.image.tag }}"
         imagePullPolicy: {{ .Values.image.pullPolicy }}
         env:
-{{- range $pkey, $pval := .Values.env }}
-        - name: {{ $pkey }}
-          value: {{ quote $pval }}
-{{- end }}
+        - name: DB
+          value: {{ template "fullname" . }}-db
         ports:
         - containerPort: {{ .Values.service.internalPort }}
         livenessProbe:
@@ -48,4 +44,3 @@ spec:
         resources:
 {{ toYaml .Values.resources | indent 12 }}
       terminationGracePeriodSeconds: {{ .Values.terminationGracePeriodSeconds }}
-{{- end }}
